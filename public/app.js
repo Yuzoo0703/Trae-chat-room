@@ -81,7 +81,8 @@
   function connect() {
     const savedId = localStorage.getItem('userId');
     if (!savedId) { alert('请先注册'); return; }
-    ws = new WebSocket(`ws://${location.host}/?userId=${encodeURIComponent(savedId)}`);
+    const wsProto = location.protocol === 'https:' ? 'wss' : 'ws';
+    ws = new WebSocket(`${wsProto}://${location.host}/?userId=${encodeURIComponent(savedId)}`);
     ws.addEventListener('open', () => {
       setInterval(() => ws && ws.readyState === 1 && ws.send(JSON.stringify({ type: 'ping', payload: {} })), 20000);
     });
