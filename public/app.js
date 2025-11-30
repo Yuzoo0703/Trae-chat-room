@@ -78,20 +78,24 @@
     });
   }
 
-  function connect() {
-    const savedId = localStorage.getItem('userId');
-    if (!savedId) { alert('请先注册'); return; }
-    const secure = (typeof window !== 'undefined' && window.isSecureContext) || location.protocol === 'https:';
-    const wsProto = secure ? 'wss' : 'ws';
-    const overrideFull = (window.WS_URL || localStorage.getItem('WS_URL') || '').trim();
-    const overrideHost = (window.WS_BASE || localStorage.getItem('WS_BASE') || location.host);
-    const url = overrideFull ? `${overrideFull}?userId=${encodeURIComponent(savedId)}` : `${wsProto}://${overrideHost}/?userId=${encodeURIComponent(savedId)}`;
-    ws = new WebSocket(url);
-    ws.addEventListener('open', () => {
-      setInterval(() => ws && ws.readyState === 1 && ws.send(JSON.stringify({ type: 'ping', payload: {} })), 20000);
-    });
-    ws.addEventListener('message', onWsMessage);
-  }
+function connect() {
+  const savedId = localStorage.getItem('userId');
+  if (!savedId) { alert('请先注册'); return; }
+
+  // --- 修改的部分 ---
+  const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+  const host = window.location.host;
+  const url = `${protocol}//${host}/?userId=${encodeURIComponent(savedId)}`;
+  // -----------------
+
+  ws = new WebSocket(url);
+  
+  ws.addEventListener('open', () => {
+    // 心跳包逻辑保持不变
+    setInterval(() => ws && ws.readyState === 1 && ws.send(JSON.stringify({ type: 'ping', payload: {} })), 20000);
+  });
+  ws.addEventListener('message', onWsMessage);
+}
 
   function onWsMessage(ev) {
     let msg;
