@@ -1,0 +1,16 @@
+{
+  "name": "ephemeral-chat",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Simple chat with one-time self-destruct messages",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "ws": "^8.18.0",
+    "bcryptjs": "^2.4.3"
+  }
+}
+

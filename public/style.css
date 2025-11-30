@@ -1,0 +1,25 @@
+:root { --bg:#0f172a; --fg:#e2e8f0; --muted:#94a3b8; --accent:#38bdf8; }
+* { box-sizing: border-box; }
+body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background:var(--bg); color:var(--fg); }
+header { padding:16px; border-bottom:1px solid #1f2937; display:flex; justify-content:space-between; align-items:center; }
+h1 { margin:0; font-size:20px; }
+section { padding:16px; }
+.row { display:flex; gap:8px; align-items:center; }
+input, textarea, button { background:#111827; color:var(--fg); border:1px solid #374151; border-radius:6px; padding:8px; }
+button { cursor:pointer; }
+button:hover { border-color:var(--accent); }
+#friendList { list-style:none; padding:0; margin-top:8px; }
+#friendList li { padding:6px 8px; border:1px solid #374151; border-radius:6px; margin-bottom:6px; display:flex; justify-content:space-between; align-items:center; }
+#friendList li button { font-size:12px; }
+#messages { border:1px solid #374151; border-radius:8px; min-height:200px; padding:8px; display:flex; flex-direction:column; gap:8px; }
+.panel { display:none; flex-direction:column; gap:8px; }
+.panel.active { display:flex; }
+#searchResults { list-style:none; padding:0; margin-top:8px; }
+#searchResults li { padding:6px 8px; border:1px dashed #374151; border-radius:6px; margin-bottom:6px; display:flex; justify-content:space-between; align-items:center; color:var(--muted); }
+.msg { padding:8px; border-radius:8px; max-width:70%; }
+.me { background:#1f2937; align-self:flex-end; }
+.peer { background:#0b152d; align-self:flex-start; }
+.stub { border:1px dashed var(--accent); color:var(--muted); }
+.destroy { opacity:0.6; font-style:italic; }
+.composer { margin-top:8px; display:flex; flex-direction:column; gap:8px; }
+.badge { background:#ef4444; color:#fff; border-radius:9999px; padding:2px 6px; font-size:12px; margin-left:6px; }

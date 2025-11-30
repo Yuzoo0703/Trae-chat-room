@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>后台管理</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>后台管理</h1>
+      <div class="row">
+        <input id="admUser" placeholder="管理员用户名" />
+        <input id="admPass" placeholder="管理员密码" type="password" />
+        <button id="loginBtn">登录后台</button>
+        <button id="loadBtn">加载用户</button>
+        <button id="wipeBtn">清空全部数据</button>
+      </div>
+    </header>
+    <section>
+      <ul id="userList"></ul>
+    </section>
+    <script src="/admin.js"></script>
+  </body>
+  </html>

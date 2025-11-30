@@ -1,0 +1,39 @@
+{
+  "users": {
+    "aHYYd7yGW4": {
+      "username": "zeratul",
+      "friends": [
+        "aq8Zp4mng9"
+      ],
+      "inbox": [],
+      "oneTime": []
+    },
+    "3fKEWSsh2f": {
+      "username": "alark",
+      "friends": [
+        "aHYYd7yGW4"
+      ],
+      "inbox": [],
+      "oneTime": []
+    },
+    "aq8Zp4mng9": {
+      "username": "zeratul1",
+      "passwordHash": "$2a$10$oAiFC6KpTv4SrICWEEHw9uakNyCz3gEC68c9qSofQpEq21UbaLV5i",
+      "friends": [
+        "sPxzXLgvJ7",
+        "aHYYd7yGW4"
+      ],
+      "inbox": [],
+      "oneTime": []
+    },
+    "sPxzXLgvJ7": {
+      "username": "alark1",
+      "passwordHash": "$2a$10$eM1YTehS/imwjn5Kn.u8Zea5V4yhGfk65uRz4PyIkwN.v8CaA7KkG",
+      "friends": [
+        "aq8Zp4mng9"
+      ],
+      "inbox": [],
+      "oneTime": []
+    }
+  }
+}

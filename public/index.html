@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>一次性消息聊天</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>一次性消息聊天</h1>
+      <div class="row">
+        <input id="regName" placeholder="用户名" />
+        <input id="regPass" placeholder="密码" type="password" />
+        <button id="regBtn">注册</button>
+        <button id="loginBtn">登录</button>
+        <button id="connBtn">连接聊天</button>
+        <button id="logoutBtn">登出</button>
+        <div>我的用户ID：<span id="myId">未连接</span></div>
+      </div>
+    </header>
+
+    <section id="friends">
+      <h2>好友</h2>
+      <div class="row">
+        <input id="friendInput" placeholder="输入好友ID" />
+        <button id="addFriendBtn">添加好友</button>
+      </div>
+      <ul id="friendList"></ul>
+      <ul id="searchResults"></ul>
+    </section>
+
+    <section id="chat">
+      <h2>聊天</h2>
+      <div class="row">
+        <label>当前聊天对象：<span id="currentPeer">未选择</span></label>
+      </div>
+      <div id="messages"></div>
+      <div class="composer">
+        <textarea id="msgInput" rows="3" placeholder="输入消息…"></textarea>
+        <div class="row">
+          <label><input type="checkbox" id="oneTimeChk" /> 发送一次性消息</label>
+          <label>TTL(秒)：<input type="number" id="ttlInput" min="1" value="30" /></label>
+          <button id="sendBtn">发送</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="/app.js"></script>
+  </body>
+  </html>
