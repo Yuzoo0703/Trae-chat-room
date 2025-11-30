@@ -82,7 +82,8 @@
     const savedId = localStorage.getItem('userId');
     if (!savedId) { alert('请先注册'); return; }
     const wsProto = location.protocol === 'https:' ? 'wss' : 'ws';
-    ws = new WebSocket(`${wsProto}://${location.host}/?userId=${encodeURIComponent(savedId)}`);
+    const overrideHost = (window.WS_BASE || localStorage.getItem('WS_BASE') || location.host);
+    ws = new WebSocket(`${wsProto}://${overrideHost}/?userId=${encodeURIComponent(savedId)}`);
     ws.addEventListener('open', () => {
       setInterval(() => ws && ws.readyState === 1 && ws.send(JSON.stringify({ type: 'ping', payload: {} })), 20000);
     });
